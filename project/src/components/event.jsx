@@ -1,13 +1,20 @@
 import Countdown from "react-countdown";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ProfileCard } from "./guset";
 
 const EventContdown = () => {
+  const [remainingTime, setRemainingTime] = useState(
+    parseInt(localStorage.getItem("countdownTimestamp")) ||
+      Date.now() + 216435000
+  );
+  useEffect(() => {
+    localStorage.setItem("countdownTimestamp", remainingTime.toString());
+  }, [remainingTime]);
   return (
     <>
       <Countdown
-        date={Date.now() + 294076000}
-        calc
-        className="h-32 w-auto font-mono text-center  m-7 sm:text-5xl md:text-7xl lg:text-9xl sm:m-0 md:m-3 lg:m-5"
+        date={remainingTime}
+        className="h-36 w-auto font-mono text-center  m-7 sm:text-5xl md:text-7xl lg:text-9xl sm:m-0 md:m-3 lg:m-5"
       />
       <h2 className="h-32 w-auto font-mono text-center  m-6 sm:text-xl,m-0 md:text-1xl lg:text-4xl">
         متضيعش هذي الفرصة
@@ -19,9 +26,13 @@ const EventContdown = () => {
 const EventMain = () => {
   return (
     <>
-      <div>
-        <h1>المشكل يرجع فرصة</h1>
-        <p>
+      <div className="flex justify-center items-center flex-col  w-screen h-auto ">
+        <h1 className="text-8xl h-60 sm:text-3xl md:text-5xl lg:text-8xl  sm:h-20 md:h-36">
+          <span className="text-red-700">المشكل </span>
+          يرجع
+          <span className="text-green-700"> فرصة</span>
+        </h1>
+        <p className="text-center text-xl w-1/2 overflow-hidden h-1/2 mt-2  ">
           راح نعاونك تقضي على سبب فشلك في بداية مشروعك. كيما تمنيت يعاونوني كي
           بديت أنا قبل 5 سنوات. أسباب فشلك هوما :المحيط. الخبرة و راس المال.
           ولكن يجمعهم مشكل واحد. التواصل بمثال أوضح. كي تجي لحدث 9 مارس. راح
@@ -32,8 +43,31 @@ const EventMain = () => {
           يحبسك في رمضان هذا
         </p>
 
-        <p>9 mars 2024</p>
-        <p>USTHB</p>
+        <p className="text-xl h-16  ">9 mars 2024</p>
+        <p className="h-12 ">USTHB</p>
+        <p className="overflow-hidden h-60 ">
+          Fiche technique : 8-10 check in: arrivée des visiteurs
+          <br />
+          10-12conférence des responsables de l'association <br />
+          12-13 pause petitdéjeuner <br />
+          13-14 conférence de TFC <br />
+          13-13:30 Explication du concept deTFC <br />
+          13:30-14 explication du programme RAMADHAN <br />
+          14-15 pause networking
+          <br />
+          15:30 - 16:00 cérémonie de clôture
+          <br />
+        </p>
+
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-12 m-4">
+          Rejoignez nous
+        </button>
+        <p className="text-4xl h-24 mt-8 ">Nos invités</p>
+        <div className="flex h-auto flex-wrap justify-center items-center">
+          <ProfileCard />
+          <ProfileCard />
+          <ProfileCard />
+        </div>
       </div>
     </>
   );
@@ -54,7 +88,7 @@ export default function Event() {
 
   return (
     <>
-      <div className="h-screen w-screen flex justify-center align-middle flex-col dark">
+      <div className=" w-screen flex justify-center align-middle flex-col dark">
         {showOldComponent ? <EventContdown /> : <EventMain />}
         <div className=" flex justify-center align-middle">
           <button className={block} onClick={handleButtonClick}>
