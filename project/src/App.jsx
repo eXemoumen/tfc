@@ -24,6 +24,7 @@ function App() {
         <Route path='/about' element={<About />}/>
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
+      
       <Footer />
     </>
   );

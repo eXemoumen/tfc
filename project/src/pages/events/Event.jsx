@@ -1,7 +1,15 @@
 import Countdown from "react-countdown";
 import { useState, useEffect } from "react";
-import { ProfileCard } from "../guset";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Tooltip,
+} from "@material-tailwind/react";
 
+import Lamin from "../events/lamin.jpg";
 const EventContdown = () => {
   const [remainingTime, setRemainingTime] = useState(
     parseInt(localStorage.getItem("countdownTimestamp")) ||
@@ -26,7 +34,7 @@ const EventContdown = () => {
 const EventMain = () => {
   return (
     <>
-      <div className="flex justify-center items-center flex-col  w-screen h-auto ">
+      <div className="flex justify-center items-center flex-col   h-auto ">
         <h1 className="text-8xl h-60 sm:text-3xl md:text-5xl lg:text-8xl  sm:h-20 md:h-36">
           <span className="text-red-700">المشكل </span>
           يرجع
@@ -63,10 +71,70 @@ const EventMain = () => {
           Rejoignez nous
         </button>
         <p className="text-4xl h-24 mt-8 ">Nos invités</p>
-        <div className="flex h-auto flex-wrap justify-center items-center">
-          <ProfileCard />
-          <ProfileCard />
-          <ProfileCard />
+        <div className="flex h-auto flex-wrap justify-center items-center gap-2">
+          <Card className="w-96 bg-black border-white">
+            <CardHeader floated={false} className="h-80">
+              <img
+                className="h-full w-screen"
+                src={Lamin}
+                alt="profile-picture"
+              />
+            </CardHeader>
+            <CardBody className="text-center">
+              <Typography variant="h4" color="black" className="mb-2">
+                LAMIN AMARI
+              </Typography>
+              <Typography
+                color="blue-gray"
+                className="font-medium"
+                textGradient
+              >
+                CONTENT CEATOR
+              </Typography>
+            </CardBody>
+          </Card>
+          <Card className="w-96 bg-black border-white">
+            <CardHeader floated={false} className="h-80">
+              <img
+                className="h-full w-screen"
+                src={Lamin}
+                alt="profile-picture"
+              />
+            </CardHeader>
+            <CardBody className="text-center">
+              <Typography variant="h4" color="black" className="mb-2">
+                LAMIN AMARI
+              </Typography>
+              <Typography
+                color="blue-gray"
+                className="font-medium"
+                textGradient
+              >
+                CONTENT CEATOR
+              </Typography>
+            </CardBody>
+          </Card>
+          <Card className="w-96 bg-black border-white">
+            <CardHeader floated={false} className="h-80">
+              <img
+                className="h-full w-screen"
+                src={Lamin}
+                alt="profile-picture"
+              />
+            </CardHeader>
+            <CardBody className="text-center">
+              <Typography variant="h4" color="black" className="mb-2">
+                LAMIN AMARI
+              </Typography>
+              <Typography
+                color="blue-gray"
+                className="font-medium"
+                textGradient
+              >
+                CONTENT CEATOR
+              </Typography>
+            </CardBody>
+          </Card>
         </div>
       </div>
     </>
@@ -88,7 +156,7 @@ export default function Event() {
 
   return (
     <>
-      <div className=" w-screen flex justify-center align-middle flex-col dark">
+      <div className="  flex justify-center align-middle flex-col dark">
         {showOldComponent ? <EventContdown /> : <EventMain />}
         <div className=" flex justify-center align-middle">
           <button className={block} onClick={handleButtonClick}>
