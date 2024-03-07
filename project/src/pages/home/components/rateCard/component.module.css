@@ -1,0 +1,32 @@
+.card{
+   width: 350px;
+   min-width:  350px;
+   height: 300px;
+   background-color: #1E1B1B;
+   padding: 20px;
+   border: white 1px solid;
+}
+.stars{
+    display: flex;
+    gap: 5px;
+    width: max-content;
+    margin-inline: auto;
+}
+.card>h1{
+  text-align:justify;
+  font-family: roboto;
+font-size: 22px;
+font-weight: 600;
+line-height: 30px;
+letter-spacing: 0.02em;
+
+ }
+.card>p{
+  text-align:justify;
+  font-family: "Rubik", sans-serif;
+  margin-top: 10px;
+  font-size: 13px;
+font-weight: 400;
+letter-spacing: 0.02em;
+word-wrap: break-word;
+ }

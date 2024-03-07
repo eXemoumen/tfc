@@ -1,0 +1,49 @@
+.sec{
+    margin-Top: 5rem;
+     display: flex;
+     justify-content: space-between;
+      padding-Left: 60px; padding-Right:60px; align-Items: center;
+}
+
+.sec h1 {
+    font-family: Roboto;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 900px){
+    .sec{
+        margin-Top: 5rem;
+         display: flex;
+        flex-direction: column;
+         justify-content: center;
+          padding-Left: 60px; 
+          padding-Right:60px; 
+          align-Items: center;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .sec {
+        padding-Left: 0px; 
+        padding-Right:0px; 
+    }
+    .sec h1 {
+        font-family: Roboto;
+        font-size: .8cm;
+        font-weight: 700;
+    }
+
+    .sec p {
+        font-family: "Abel";
+        font-weight: 400;
+        font-size: .3cm;
+    }
+
+    .carousel {
+        margin-top: 20px;
+    }
+}
+

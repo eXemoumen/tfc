@@ -1,6 +1,6 @@
 import Countdown from "react-countdown";
 import { useState, useEffect } from "react";
-import { ProfileCard } from "./guset";
+import { ProfileCard } from "../guset";
 
 const EventContdown = () => {
   const [remainingTime, setRemainingTime] = useState(
