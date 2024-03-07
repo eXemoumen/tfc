@@ -10,6 +10,9 @@ import {
 } from "@material-tailwind/react";
 
 import Lamin from "../events/lamin.jpg";
+import Mouhamed from "../events/mohamed.jpg";
+import Walid from "../events/walid.jpg";
+
 const EventContdown = () => {
   const [remainingTime, setRemainingTime] = useState(
     parseInt(localStorage.getItem("countdownTimestamp")) ||
@@ -66,14 +69,16 @@ const EventMain = () => {
           15:30 - 16:00 cérémonie de clôture
           <br />
         </p>
+        <a href="https://forms.gle/mJVeHDbiGZvKd3CX8" target="_blank">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-12 m-4">
+            Rejoignez nous
+          </button>
+        </a>
 
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-12 m-4">
-          Rejoignez nous
-        </button>
         <p className="text-4xl h-24 mt-8 ">Nos invités</p>
         <div className="flex h-auto flex-wrap justify-center items-center gap-2">
-          <Card className="w-96 bg-black border-white">
-            <CardHeader floated={false} className="h-80">
+          <Card className="w-36 bg-black border-white rounded-full">
+            <CardHeader floated={false} className="h-36">
               <img
                 className="h-full w-screen"
                 src={Lamin}
@@ -81,7 +86,7 @@ const EventMain = () => {
               />
             </CardHeader>
             <CardBody className="text-center">
-              <Typography variant="h4" color="black" className="mb-2">
+              <Typography variant="h6" color="white" className="mb-2">
                 LAMIN AMARI
               </Typography>
               <Typography
@@ -93,17 +98,21 @@ const EventMain = () => {
               </Typography>
             </CardBody>
           </Card>
-          <Card className="w-96 bg-black border-white">
-            <CardHeader floated={false} className="h-80">
+          <Card className="w-36 bg-black border-white rounded-full">
+            <CardHeader floated={false} className="h-36">
               <img
                 className="h-full w-screen"
-                src={Lamin}
+                src={Mouhamed}
                 alt="profile-picture"
               />
             </CardHeader>
             <CardBody className="text-center">
-              <Typography variant="h4" color="black" className="mb-2">
-                LAMIN AMARI
+              <Typography
+                variant="h6"
+                color="white"
+                className="mb-2 capitalize"
+              >
+                mohamed belili
               </Typography>
               <Typography
                 color="blue-gray"
@@ -114,17 +123,17 @@ const EventMain = () => {
               </Typography>
             </CardBody>
           </Card>
-          <Card className="w-96 bg-black border-white">
-            <CardHeader floated={false} className="h-80">
+          <Card className="w-36 bg-black border-white rounded-full">
+            <CardHeader floated={false} className="h-36">
               <img
                 className="h-full w-screen"
-                src={Lamin}
+                src={Walid}
                 alt="profile-picture"
               />
             </CardHeader>
             <CardBody className="text-center">
-              <Typography variant="h4" color="black" className="mb-2">
-                LAMIN AMARI
+              <Typography variant="h6" color="white" className="mb-2 capitalize">
+                walid ezra
               </Typography>
               <Typography
                 color="blue-gray"
